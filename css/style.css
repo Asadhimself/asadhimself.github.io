@@ -400,7 +400,7 @@ h3.my-profession {
 
 .personal-info .info-item {
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .personal-info .info-item p {
@@ -782,10 +782,20 @@ h3.my-profession {
     .about .education,
     .about .experience,
     .skills,
-    .info-item span,
     .about .about-content .personal-info {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+    .personal-info{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .personal-info .info-item{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .form-group .btn{
+        width: 100%;
     }
 }
 

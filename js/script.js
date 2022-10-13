@@ -2,15 +2,15 @@
 
 var typed = new Typed(".typing", {
     strings: ["Python Developer", "Backend Developer", "Web Developer", "Programmer enthusiast"],
-    typespeed: 60,
-    BackSpeed: 60,
+    typeSpeed: 60,
+    backSpeed: 30,
     loop: true
 })
 // Aside
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
     totalNavList = navList.length;
-allSection = document.querySelectorAll(".section"),
+const allSection = document.querySelectorAll(".section"),
     totalSections = allSection.length;
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
@@ -30,12 +30,12 @@ for (let i = 0; i < totalNavList; i++) {
         }
     })
 }
-function removeBackSection(){
+function removeBackSection() {
     for (let i = 0; i < totalSections; i++) {
         allSection[i].classList.remove("back-section")
     }
 }
-function addBackSection(num){
+function addBackSection(num) {
     allSection[num].classList.add("back-section");
 }
 function showSection(element) {
@@ -54,14 +54,16 @@ function updateNav(element) {
         }
     }
 }
-document.querySelector(".hire-me").addEventListener("click", function () {
-    const sectionIndex = this.getAttribute("data-section-index");
-    // console.log(sectionIndex);
-    showSection(this);
-    updateNav(this);
+function hireMe() {
+    const hireMeButton = document.getElementsByClassName("hire-me")[0]
+    const sectionIndex = hireMeButton.getAttribute("data-section-index");
+    console.log(sectionIndex);
+    showSection(hireMeButton);
+    updateNav(hireMeButton);
     removeBackSection();
     addBackSection(sectionIndex);
-})
+}
+
 const navTogglerBtn = document.querySelector(".nav-toggler"),
     aside = document.querySelector(".aside");
 navTogglerBtn.addEventListener("click", () => {
